@@ -4,7 +4,10 @@ const api = require('./api.js');
 
 
 app.use('/', express.static(__dirname + '/../client/dist', {
-  maxAge: 31557600
+  maxAge: 31557600,
+  setHeaders: function (res, path, stat) {
+    res.set('Cache-Control', 'public');
+  }
 }));
 app.use('/:id', express.static(__dirname + '/../client/dist'));
 
