@@ -3,7 +3,7 @@ const app = express();
 const api = require('./api.js');
 
 
-// app.use('/', express.static(__dirname + '/../client/dist'));
+app.use('/', express.static(__dirname + '/../client/dist'));
 app.use('/:id', express.static(__dirname + '/../client/dist'));
 
 // Retrieves track info from db
